@@ -27,7 +27,7 @@ A sleek, mobile‑first storefront for women’s shoes & bags, built with **HTML
 
 * Hero & trust bar
 
-  ![Hero](docs/screenshot-hero.png)
+  ![Hero](assets/bag.jpeg)
 
 * Product grid, filters & quick view
 

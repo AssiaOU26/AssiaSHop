@@ -1,0 +1,774 @@
+<!DOCTYPE html>
+
+<html class="light" dir="rtl" lang="ar"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>متجر أحذية وحقائب نسائية عصرية</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&amp;family=Noto+Sans+Arabic:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+<script>
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "primary": "#8b5cf6",
+              "secondary": "#b45309",
+              "background-light": "#f7f7f7",
+              "background-dark": "#111827",
+              "text-light": "#111827",
+              "text-dark": "#f7f7f7",
+            },
+            fontFamily: {
+              "display": ["Manrope", "Noto Sans Arabic", "sans-serif"]
+            },
+            borderRadius: {
+              "DEFAULT": "8px",
+              "lg": "12px",
+              "xl": "16px",
+              "full": "9999px"
+            },
+          },
+        },
+      }
+    </script>
+<style>
+        body {
+            font-family: 'Manrope', 'Noto Sans Arabic', sans-serif;
+        }
+        .material-symbols-outlined {
+          font-variation-settings:
+          'FILL' 0,
+          'wght' 400,
+          'GRAD' 0,
+          'opsz' 24
+        }
+    </style>
+  <style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  <style>
+    html{ scroll-behavior: smooth; }
+  </style>
+  <style>
+    .reveal{opacity:0; transform: translateY(16px); transition: opacity .4s ease, transform .4s ease;}
+    .reveal.is-visible{opacity:1; transform: translateY(0);}  
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark text-text-light dark:text-text-dark font-display">
+<div class="relative w-full flex flex-col group/design-root overflow-x-hidden">
+<!-- Top App Bar / Header -->
+<div class="sticky top-0 z-50 flex items-center bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-sm p-4 justify-between border-b border-gray-200 dark:border-gray-800">
+  <button id="menuButton" class="flex items-center justify-center h-10 w-10 rounded-md hover:bg-black/5 dark:hover:bg-white/10">
+    <span class="material-symbols-outlined text-text-light dark:text-text-dark">menu</span>
+  </button>
+  <h2 class="text-xl font-bold leading-tight tracking-[-0.015em] flex-1 text-center" data-i18n="brand">Brand Logo</h2>
+  <div class="flex items-center gap-2">
+    <button id="themeToggle" class="flex items-center justify-center h-9 w-9 rounded-full hover:bg-black/5 dark:hover:bg-white/10" title="Toggle theme">
+      <span class="material-symbols-outlined text-text-light dark:text-text-dark">dark_mode</span>
+    </button>
+    <button id="langToggle" class="flex items-center justify-center h-9 px-3 rounded-full bg-white/80 dark:bg-white/10 text-sm font-semibold border border-gray-200 dark:border-gray-700">
+      AR
+    </button>
+    <button id="cartButton" class="relative flex items-center justify-center h-10 w-10 rounded-md hover:bg-black/5 dark:hover:bg-white/10">
+      <span class="material-symbols-outlined text-text-light dark:text-text-dark">shopping_bag</span>
+      <span id="cartCount" class="absolute -top-1 -left-1 text-[11px] px-1.5 py-0.5 rounded-full bg-primary text-white hidden">0</span>
+    </button>
+  </div>
+</div>
+
+<!-- Sidebar Navigation -->
+<aside id="sidebar" class="fixed inset-y-0 right-0 w-72 max-w-[85vw] translate-x-full transition-transform duration-300 ease-out bg-white dark:bg-background-dark border-l border-gray-200 dark:border-gray-800 z-50 shadow-xl">
+  <div class="p-4 flex items-center justify-between border-b border-gray-200 dark:border-gray-800">
+    <h3 class="font-bold" data-i18n="menu">القائمة</h3>
+    <button id="closeSidebar" class="h-9 w-9 grid place-items-center rounded-md hover:bg-black/5 dark:hover:bg-white/10">
+      <span class="material-symbols-outlined">close</span>
+    </button>
+  </div>
+  <nav class="p-4 space-y-2">
+    <a href="#hero" class="block rounded-lg px-3 py-2 hover:bg-black/5 dark:hover:bg-white/10" data-i18n="nav_home">الرئيسية</a>
+    <a href="#products" class="block rounded-lg px-3 py-2 hover:bg-black/5 dark:hover:bg-white/10" data-i18n="nav_products">المنتجات</a>
+    <a href="#about" class="block rounded-lg px-3 py-2 hover:bg-black/5 dark:hover:bg-white/10" data-i18n="nav_about">عن الحرفة</a>
+    <a href="#blog" class="block rounded-lg px-3 py-2 hover:bg-black/5 dark:hover:bg-white/10" data-i18n="nav_blog">المدونة</a>
+    <a href="#contact" class="block rounded-lg px-3 py-2 hover:bg-black/5 dark:hover:bg-white/10" data-i18n="nav_contact">تواصل</a>
+  </nav>
+</aside>
+<!-- Hero Section -->
+<div id="hero" class="@container">
+<div class="@[480px]:p-4">
+<div class="flex min-h-[60vh] flex-col gap-6 bg-cover bg-center bg-no-repeat @[480px]:gap-8 items-center justify-center p-4 text-center" data-alt="Stylish women's shoes and bags on a minimalist background" style='background-image: linear-gradient(rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0.5) 100%), url("https://lh3.googleusercontent.com/aida-public/AB6AXuD5P5Mmae1A5Il6er4zi_8nwjefrVn99e3Xwub0zEWl9n9NWgM7vFp62BGHmvKxCPlt9eHCx5nj8H4X8He_g34FxtRuY4OWiQ3OOjM-UMJDMo-mD64T13xXsQEN2E1YpYUBjlQEq1B2jg4DaLFZg6hb3ZABfnALVQaReNr_sSqOr81qXZ7ZyWFoZgkRH42Cn5GWoJOtDPc0Ud5LHVW9JOxGQInEZzYRZIlqZ4Kbta6C5NjGGdK5doF6Hiu5xlJ_iRl0RM77JFQuDtk");'>
+<div class="flex flex-col gap-2">
+<h1 class="text-white text-4xl font-black leading-tight tracking-[-0.033em] @[480px]:text-5xl" data-i18n="hero_title">أحذية وحقائب نسائية عصرية</h1>
+<h2 class="text-white text-sm font-normal leading-normal @[480px]:text-base" data-i18n="hero_sub">تخفيض: 20% على طلبك الأول</h2>
+</div>
+<div class="flex flex-wrap gap-3 justify-center">
+<button class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-12 px-5 bg-primary text-white text-base font-bold leading-normal tracking-[0.015em]">
+<span class="truncate" data-i18n="shop_now">تسوقي الآن</span>
+</button>
+<button id="whatsappCTA" class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-12 px-5 bg-white/90 text-text-light text-base font-bold leading-normal tracking-[0.015em]">
+<span class="truncate" data-i18n="whatsapp">اطلبي عبر واتساب</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Stats / Trust Bar -->
+<div class="flex flex-wrap gap-4 p-4 reveal">
+<div class="flex min-w-[158px] flex-1 flex-col gap-2 rounded-lg p-4 border border-gray-200 dark:border-gray-700 bg-white dark:bg-text-light/5 text-center items-center">
+<span class="material-symbols-outlined text-secondary text-3xl">local_shipping</span>
+<p class="text-text-light dark:text-text-dark text-base font-medium leading-normal" data-i18n="usp_shipping">توصيل مجاني</p>
+<p class="text-text-light/70 dark:text-text-dark/70 text-sm" data-i18n="usp_shipping_sub">على جميع الطلبات</p>
+</div>
+<div class="flex min-w-[158px] flex-1 flex-col gap-2 rounded-lg p-4 border border-gray-200 dark:border-gray-700 bg-white dark:bg-text-light/5 text-center items-center">
+<span class="material-symbols-outlined text-secondary text-3xl">payments</span>
+<p class="text-text-light dark:text-text-dark text-base font-medium leading-normal" data-i18n="usp_cod">الدفع عند الاستلام</p>
+<p class="text-text-light/70 dark:text-text-dark/70 text-sm" data-i18n="usp_cod_sub">ادفعي عند وصول طلبك</p>
+</div>
+<div class="flex min-w-[158px] flex-1 flex-col gap-2 rounded-lg p-4 border border-gray-200 dark:border-gray-700 bg-white dark:bg-text-light/5 text-center items-center">
+<span class="material-symbols-outlined text-secondary text-3xl">support_agent</span>
+<p class="text-text-light dark:text-text-dark text-base font-medium leading-normal" data-i18n="usp_support">دعم 24/7</p>
+<p class="text-text-light/70 dark:text-text-dark/70 text-sm" data-i18n="usp_support_sub">نحن هنا للمساعدة</p>
+</div>
+</div>
+<!-- Section Header for Products -->
+<h2 id="products" class="text-text-light dark:text-text-dark text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-5 text-center" data-i18n="featured">منتجاتنا المميزة</h2>
+<!-- Chips / Filters -->
+<div class="flex gap-3 px-4 py-3 overflow-x-auto">
+<button class="flex h-10 shrink-0 items-center justify-center gap-x-2 rounded-lg bg-primary/20 dark:bg-primary/30 px-4">
+<span class="material-symbols-outlined text-primary">tune</span>
+<p class="text-primary text-sm font-medium leading-normal">تصفية</p>
+</button>
+<button class="flex h-10 shrink-0 items-center justify-center gap-x-2 rounded-lg bg-gray-200 dark:bg-white/10 px-4">
+<p class="text-text-light dark:text-text-dark text-sm font-medium leading-normal">أحذية</p>
+</button>
+<button class="flex h-10 shrink-0 items-center justify-center gap-x-2 rounded-lg bg-gray-200 dark:bg-white/10 px-4">
+<p class="text-text-light dark:text-text-dark text-sm font-medium leading-normal">حقائب</p>
+</button>
+<button class="flex h-10 shrink-0 items-center justify-center gap-x-2 rounded-lg bg-gray-200 dark:bg-white/10 px-4">
+<p class="text-text-light dark:text-text-dark text-sm font-medium leading-normal">الأكثر مبيعاً</p>
+</button>
+</div>
+<!-- Product Grid -->
+<div class="grid grid-cols-2 gap-4 p-4">
+<!-- Product Card 1 -->
+<div class="relative flex flex-col gap-2 overflow-hidden rounded-lg bg-white dark:bg-text-light/5 shadow-sm transition-transform hover:scale-105">
+<div class="absolute top-2 left-2 z-10 rounded bg-secondary px-2 py-1 text-xs font-bold text-white">الأكثر مبيعاً</div>
+<img class="h-40 w-full object-cover" data-alt="Elegant high-heeled shoe with crystal embellishments." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB2oG6nFwAfcEbJB397bEpWLGDBorQ4VQHa99L8EpUcb1TxFljVy8qIcIIIiTsf2qJaYEW1iHT3Qxv_zMEQ-VNZFKU_D6iyA4ObD2pXD_Q_fjpaghMi9yAXFhp87IFFVvewQaiFtFl0CaMjF-uZtwKa6ukt24Ni3cL0bmlmlANurxUR4OZ4lRpgLUlOKDIxloyBk7fDtUZ6_w52PD4-p6---pr9gBaZoH5z17kms-xWvC6j9Mffa_QARKWUEIXvtR7_FGPDx5tdfBw"/>
+<div class="flex flex-col gap-2 p-3">
+<h3 class="font-bold text-text-light dark:text-text-dark text-sm leading-snug" data-i18n="p1_name">حذاء الكريستال الأنيق</h3>
+<p class="font-bold text-primary"><span class="price" data-price="350"></span></p>
+<div class="flex gap-2 mt-2">
+  <button data-add="p1" class="flex-1 flex h-9 cursor-pointer items-center justify-center overflow-hidden rounded-md bg-primary text-white text-sm font-bold" data-i18n="add_to_cart">أضف للسلة</button>
+  <button data-quick="p1" class="flex h-9 w-9 grid place-items-center rounded-md border border-gray-200 dark:border-gray-700"><span class="material-symbols-outlined text-sm">visibility</span></button>
+  </div>
+</div>
+</div>
+<!-- Product Card 2 -->
+<div class="relative flex flex-col gap-2 overflow-hidden rounded-lg bg-white dark:bg-text-light/5 shadow-sm transition-transform hover:scale-105">
+<img class="h-40 w-full object-cover" data-alt="Stylish brown leather handbag." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBcQwXEYX93_GCVf0pa-yjPi1RMgE88uk0YimjVScJ5LpbiA0VpgMGV0-dSa47lA-tOeettyQxBKu4WrxvgKxNBec8DZU9m_1K79pbF5VeO0EzXDerCo-7NRrsYxe9WGzgDK0erMG56sgmUQ5TlcG2HTEznC1BxrT23T67k7hUUKzs-ZS8pOQZyEHeeQtvLGuO-NHIv9uOL2cCV-_E8Ns3AiXbuCj8jo8YAB__mp4g_pi-GAd8TcM86v2oh_LOoE04wUrC0MvcqvkE"/>
+<div class="flex flex-col gap-2 p-3">
+<h3 class="font-bold text-text-light dark:text-text-dark text-sm leading-snug" data-i18n="p2_name">حقيبة جلدية كلاسيكية</h3>
+<p class="font-bold text-primary"><span class="price" data-price="420"></span></p>
+<div class="flex gap-2 mt-2">
+  <button data-add="p2" class="flex-1 flex h-9 cursor-pointer items-center justify-center overflow-hidden rounded-md bg-primary text-white text-sm font-bold" data-i18n="add_to_cart">أضف للسلة</button>
+  <button data-quick="p2" class="flex h-9 w-9 grid place-items-center rounded-md border border-gray-200 dark:border-gray-700"><span class="material-symbols-outlined text-sm">visibility</span></button>
+  </div>
+</div>
+</div>
+<!-- Product Card 3 -->
+<div class="relative flex flex-col gap-2 overflow-hidden rounded-lg bg-white dark:bg-text-light/5 shadow-sm transition-transform hover:scale-105">
+<img class="h-40 w-full object-cover" data-alt="A pair of trendy white sneakers." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAlLzH1C0D84gLRTLJEgwC5Ith4DUVBs8uGxzcHVvec9dmD4hcVEGWyvoNjfGZ3nOwSLLBKBU2sFvJV3ibZQd7euXWQc4DBbeY6-D1JX2YTNOQWtHsFcAiaBh5zIuRciiWGsFmoVJdwHLI8fYhnJvYI5I4001Ves_6Jgo1ghX1pV9urjBdLoSz9dGR7RLLFBM-RPg3zc6KO9RQd6ISFXDQV_75fEbXW62GN47sfXNgG7ODozFGiRRkQrf9KWqvfhSUmV-vpzZt_ZvI"/>
+<div class="flex flex-col gap-2 p-3">
+<h3 class="font-bold text-text-light dark:text-text-dark text-sm leading-snug" data-i18n="p3_name">حذاء رياضي عصري</h3>
+<p class="font-bold text-primary"><span class="price" data-price="280"></span></p>
+<div class="flex gap-2 mt-2">
+  <button data-add="p3" class="flex-1 flex h-9 cursor-pointer items-center justify-center overflow-hidden rounded-md bg-primary text-white text-sm font-bold" data-i18n="add_to_cart">أضف للسلة</button>
+  <button data-quick="p3" class="flex h-9 w-9 grid place-items-center rounded-md border border-gray-200 dark:border-gray-700"><span class="material-symbols-outlined text-sm">visibility</span></button>
+  </div>
+</div>
+</div>
+<!-- Product Card 4 -->
+<div class="relative flex flex-col gap-2 overflow-hidden rounded-lg bg-white dark:bg-text-light/5 shadow-sm transition-transform hover:scale-105">
+<div class="absolute top-2 left-2 z-10 rounded bg-secondary px-2 py-1 text-xs font-bold text-white">الأكثر مبيعاً</div>
+<img class="h-40 w-full object-cover" data-alt="A chic pink handbag with a golden chain." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD5kAVoV-HI3bCJs28pFv8-9c2VumTTYNcNHEw0rQ27mAgNCITr7Uko1gNtSmVYUY-CqeetuhNhGsSNMkRipe4L5Tl0hZ9PcgORQ8QeeOEOcJhxr85nwkU7O1P266K6fGpci5O-NtPoHU6yJzc11w5o9ev5YytazvSXuEhcavphPOKVhR27ikzLcmwTgzXsX-s9ncUBGCoQE5xo3pEyt3HlxfhI5HRritPJ-hnYZkl5BoKuiiMhrZM4GsvqXJaVj8Xr3NEZ2vuMyao"/>
+<div class="flex flex-col gap-2 p-3">
+<h3 class="font-bold text-text-light dark:text-text-dark text-sm leading-snug" data-i18n="p4_name">حقيبة يد وردية</h3>
+<p class="font-bold text-primary"><span class="price" data-price="390"></span></p>
+<div class="flex gap-2 mt-2">
+  <button data-add="p4" class="flex-1 flex h-9 cursor-pointer items-center justify-center overflow-hidden rounded-md bg-primary text-white text-sm font-bold" data-i18n="add_to_cart">أضف للسلة</button>
+  <button data-quick="p4" class="flex h-9 w-9 grid place-items-center rounded-md border border-gray-200 dark:border-gray-700"><span class="material-symbols-outlined text-sm">visibility</span></button>
+  </div>
+</div>
+</div>
+</div>
+<!-- Dynamic Filters + Product Grid (enhanced) -->
+<section class="px-0"
+  aria-label="dynamic-products">
+  <div id="filters" class="flex gap-3 px-4 py-3 overflow-x-auto">
+    <button data-filter="all" class="filter-chip flex h-10 shrink-0 items-center justify-center gap-x-2 rounded-lg bg-primary/20 dark:bg-primary/30 px-4 text-primary text-sm font-medium" data-i18n="filter_all">الكل</button>
+    <button data-filter="shoes" class="filter-chip flex h-10 shrink-0 items-center justify-center gap-x-2 rounded-lg bg-gray-200 dark:bg-white/10 px-4 text-sm font-medium" data-i18n="filter_shoes">أحذية</button>
+    <button data-filter="bags" class="filter-chip flex h-10 shrink-0 items-center justify-center gap-x-2 rounded-lg bg-gray-200 dark:bg-white/10 px-4 text-sm font-medium" data-i18n="filter_bags">حقائب</button>
+    <button data-filter="best" class="filter-chip flex h-10 shrink-0 items-center justify-center gap-x-2 rounded-lg bg-gray-200 dark:bg-white/10 px-4 text-sm font-medium" data-i18n="filter_best">الأكثر مبيعاً</button>
+    <span class="ms-auto text-xs text-gray-500 flex items-center gap-1"><span class="material-symbols-outlined text-[18px]">tune</span><span data-i18n="filter_hint">اختاري فئة للتصفية</span></span>
+  </div>
+  <div id="productGrid" class="grid grid-cols-2 gap-4 p-4 reveal"></div>
+</section>
+
+<!-- Social Proof Section -->
+<div class="bg-white dark:bg-text-light/5 py-12 reveal">
+<h2 class="text-text-light dark:text-text-dark text-center text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-6" data-i18n="social_proof">زبائننا الراضون</h2>
+<div class="grid grid-cols-3 gap-1 px-4">
+<img class="aspect-square w-full object-cover" data-alt="Customer photo showing off their new shoes." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDpAZ9nsJXhWn4CGp9xN98KVZf7X0wtUgIYta_yKT-ueqa5v-tbwX6GBjAHBWaufNc6tvVDo14F6LQ8ewMtdLtlleudD0QfeZNIFyWh1-X20aZFyFhxNcSjBaAmNq4EeBGY91Yb8CH_fNvOT4UkNhdi3nKtE837hGcKOmdJmQhXpFYAnD9PLimhclXhBYO0pZtMoFo3OEo48nMbK0lbhrhISSqdBjsHUlZ1v9MMMn8Oldr_mdEfZEsk81JU9NbToox-zwaOrTlblYM"/>
+<img class="aspect-square w-full object-cover" data-alt="Customer photo with a stylish handbag." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCyuRXY1Vt0goPXRZ9CdPwUXT9bhvVB2PdHT6WjWNICB6Xq2q1UJSxN-6LDUtp1AGsJIGd4phT0Sn7rli71ft4t6p27ytezn1MTXFOIyJoIp3pnpxc7af1obtO77yrMkLcM4_7DHm6LtAHQaKmZoinW-nMCsYAdy7d2COuDQFhRzbD5FGcImNMZgrRr0IMcSAOlfF-o7dsRCTch3DbuCKLBbwK549E25x9UmjFWuFS5wygJhJXECaLMrLyfrJDaXiovm7RyRl249y0"/>
+<img class="aspect-square w-full object-cover" data-alt="Another customer happily displaying their purchase." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB-QJWYiC_VUa8FzzSNvBvoQCNaj6DBU8tdYxGmOL1m9dHpf-6oHeq2mBSTuhSCu9x72fUjTjSVcf-vJeqOjT4ecc56kbcCKEhcOAjMQCFISAY4oZre9cLobErbx2IjQ8tOZ2Jq91eHUP6vSGzFUA2krmWdMuRM1qm5xg3UXQvscshk1uXsM9j1HHDg0bFV3_eNwCtstxCe1otXfG34qS57RwmTt_9HW41By4iohPtzqZA_RXMFiBl2FIksQ-rxwDuxnm2Oiv_ZJeo"/>
+</div>
+<div class="p-4 mt-4 text-center">
+<p class="text-text-light/80 dark:text-text-dark/80 italic" data-i18n="testimonial_body">"جودة رائعة وتصميمات فريدة! وصلتني طلبيتي بسرعة. شكراً لكم."</p>
+<p class="mt-2 font-bold text-text-light dark:text-text-dark" data-i18n="testimonial_author">- فاطمة، من الدار البيضاء</p>
+</div>
+</div>
+<!-- About & Craft Section -->
+<section id="about" class="px-4 py-12 sm:py-16 bg-background-light/50 dark:bg-background-dark/40 reveal">
+  <div class="mx-auto max-w-5xl grid gap-8 sm:grid-cols-2 items-center">
+    <img class="rounded-lg shadow-sm aspect-[4/3] object-cover" src="https://images.unsplash.com/photo-1520975682031-ae9ee3fabcab?q=80&w=1200&auto=format&fit=crop" alt="Artisan crafting leather in Morocco"/>
+    <div class="space-y-3">
+      <h2 class="text-2xl font-extrabold" data-i18n="about_title">حرفة مغربية بلمسة عصرية</h2>
+      <p class="text-gray-600 dark:text-gray-300" data-i18n="about_body">نصنع منتجاتنا يدوياً بعناية في ورش مغربية، باستخدام جلود عالية الجودة وتفاصيل متقنة لتدوم معك طويلاً.</p>
+      <ul class="grid grid-cols-2 gap-3 text-sm">
+        <li class="flex items-center gap-2"><span class="material-symbols-outlined text-secondary">handshake</span><span data-i18n="about_point1">دعم الحرفيين المحليين</span></li>
+        <li class="flex items-center gap-2"><span class="material-symbols-outlined text-secondary">workspace_premium</span><span data-i18n="about_point2">جودة وخامات ممتازة</span></li>
+        <li class="flex items-center gap-2"><span class="material-symbols-outlined text-secondary">recycling</span><span data-i18n="about_point3">تغليف صديق للبيئة</span></li>
+        <li class="flex items-center gap-2"><span class="material-symbols-outlined text-secondary">local_mall</span><span data-i18n="about_point4">تصاميم حصرية</span></li>
+      </ul>
+    </div>
+  </div>
+  </section>
+
+<!-- Blog Ad Section -->
+<section id="blog" class="px-4 py-12 sm:py-16 reveal">
+  <div class="mx-auto max-w-5xl">
+    <h2 class="text-center text-2xl font-extrabold mb-6" data-i18n="blog_title">من المدونة</h2>
+    <div class="grid gap-4 sm:grid-cols-2">
+      <a href="#" class="group rounded-lg overflow-hidden bg-white dark:bg-text-light/5 border border-gray-200 dark:border-gray-700 shadow-sm">
+        <img class="h-44 w-full object-cover group-hover:scale-105 transition" src="https://images.unsplash.com/photo-1509631179647-0177331693ae?q=80&w=1200&auto=format&fit=crop" alt="Styling Moroccan handbags"/>
+        <div class="p-4">
+          <h3 class="font-bold" data-i18n="blog_1_title">كيف تنسقين حقيبتك المغربية مع إطلالتك؟</h3>
+          <p class="text-sm text-gray-600 dark:text-gray-300" data-i18n="blog_1_teaser">نصائح عملية لإطلالة أنيقة في كل مناسبة.</p>
+        </div>
+      </a>
+      <a href="#" class="group rounded-lg overflow-hidden bg-white dark:bg-text-light/5 border border-gray-200 dark:border-gray-700 shadow-sm">
+        <img class="h-44 w-full object-cover group-hover:scale-105 transition" src="https://images.unsplash.com/photo-1595950653106-6fcd2f0835a3?q=80&w=1200&auto=format&fit=crop" alt="Care for leather shoes"/>
+        <div class="p-4">
+          <h3 class="font-bold" data-i18n="blog_2_title">دليل العناية بالأحذية الجلدية</h3>
+          <p class="text-sm text-gray-600 dark:text-gray-300" data-i18n="blog_2_teaser">حافظي على تألقها لأطول فترة ممكنة.</p>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+<!-- Checkout Form -->
+<div id="contact" class="p-4 sm:p-6 lg:p-8 reveal">
+<div class="mx-auto max-w-lg rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-text-light/5 p-6 shadow-sm">
+<h2 class="text-center text-2xl font-bold text-text-light dark:text-text-dark sm:text-3xl" data-i18n="cta_title">اطلبي الآن</h2>
+<p class="mx-auto mt-2 max-w-md text-center text-text-light/70 dark:text-text-dark/70" data-i18n="cta_sub">املئي النموذج أدناه وسنتصل بك للتأكيد</p>
+<form id="contactForm" action="#" class="mt-8 space-y-4" novalidate>
+<div>
+<label class="sr-only" for="name">الاسم الكامل</label>
+<input class="w-full rounded-lg border-gray-200 dark:border-gray-600 bg-background-light dark:bg-background-dark p-3 text-sm shadow-sm dark:text-text-dark" id="name" placeholder="الاسم الكامل" type="text"/>
+</div>
+<div>
+<label class="sr-only" for="phone">رقم الهاتف</label>
+<input class="w-full rounded-lg border-gray-200 dark:border-gray-600 bg-background-light dark:bg-background-dark p-3 text-sm shadow-sm dark:text-text-dark" id="phone" placeholder="رقم الهاتف" type="tel"/>
+</div>
+<div>
+<label class="sr-only" for="city">المدينة</label>
+<input class="w-full rounded-lg border-gray-200 dark:border-gray-600 bg-background-light dark:bg-background-dark p-3 text-sm shadow-sm dark:text-text-dark" id="city" placeholder="المدينة" type="text"/>
+</div>
+<div>
+<label class="sr-only" for="address">العنوان</label>
+<textarea class="w-full rounded-lg border-gray-200 dark:border-gray-600 bg-background-light dark:bg-background-dark p-3 text-sm shadow-sm dark:text-text-dark" id="address" placeholder="العنوان" rows="3"></textarea>
+</div>
+<button class="block w-full rounded-lg bg-primary px-5 py-3 text-sm font-medium text-white" type="submit" data-i18n="confirm_order">تأكيد الطلب</button>
+</form>
+</div>
+</div>
+<!-- Mini-cart Drawer -->
+<aside id="miniCart" class="fixed inset-y-0 left-0 w-[90vw] max-w-md -translate-x-full transition-transform duration-300 ease-out bg-white dark:bg-background-dark border-r border-gray-200 dark:border-gray-800 z-50 shadow-xl">
+  <div class="p-4 flex items-center justify-between border-b border-gray-200 dark:border-gray-800">
+    <h3 class="font-bold" data-i18n="cart_title">سلة المشتريات</h3>
+    <button id="closeCart" class="h-9 w-9 grid place-items-center rounded-md hover:bg-black/5 dark:hover:bg-white/10">
+      <span class="material-symbols-outlined">close</span>
+    </button>
+  </div>
+  <div class="p-4 space-y-4 overflow-y-auto max-h-[45vh]" id="cartItems"></div>
+  <div class="p-4 border-t border-gray-200 dark:border-gray-800">
+    <div class="flex items-center justify-between font-bold mb-3"><span data-i18n="total">الإجمالي</span><span id="cartTotal">0</span></div>
+    <form id="codForm" class="space-y-2" novalidate>
+      <input class="w-full rounded-md border-gray-200 dark:border-gray-700 bg-background-light dark:bg-background-dark p-2 text-sm" placeholder="الاسم الكامل" data-i18n-ph="name_ph"/>
+      <input class="w-full rounded-md border-gray-200 dark:border-gray-700 bg-background-light dark:bg-background-dark p-2 text-sm" placeholder="رقم الهاتف" data-i18n-ph="phone_ph"/>
+      <input class="w-full rounded-md border-gray-200 dark:border-gray-700 bg-background-light dark:bg-background-dark p-2 text-sm" placeholder="المدينة" data-i18n-ph="city_ph"/>
+      <textarea class="w-full rounded-md border-gray-200 dark:border-gray-700 bg-background-light dark:bg-background-dark p-2 text-sm" rows="2" placeholder="العنوان" data-i18n-ph="address_ph"></textarea>
+      <button type="button" id="submitCOD" class="w-full rounded-md bg-primary text-white h-10 font-semibold" data-i18n="place_order">تأكيد الطلب</button>
+      <button type="button" id="waOrderBtn" class="w-full rounded-md border border-green-600 text-green-700 dark:text-green-400 h-10 font-semibold flex items-center justify-center gap-2"><span class="material-symbols-outlined">chat</span><span data-i18n="wa_order">اطلب عبر واتساب</span></button>
+    </form>
+  </div>
+</aside>
+
+<!-- Quick View Modal -->
+<div id="quickModal" class="fixed inset-0 bg-black/40 backdrop-blur-sm hidden items-end sm:items-center justify-center z-50">
+  <div class="bg-white dark:bg-background-dark w-full sm:max-w-lg rounded-t-2xl sm:rounded-2xl overflow-hidden shadow-xl translate-y-6 sm:translate-y-0 scale-95 opacity-0 transition" id="quickContent">
+    <div class="flex items-center justify-between p-3 border-b border-gray-200 dark:border-gray-800">
+      <h3 id="qmTitle" class="font-bold"></h3>
+      <button id="closeQuick" class="h-9 w-9 grid place-items-center rounded-md hover:bg-black/5 dark:hover:bg-white/10"><span class="material-symbols-outlined">close</span></button>
+    </div>
+    <div class="p-4 grid gap-4 sm:grid-cols-2">
+      <img id="qmImage" class="rounded-lg aspect-square object-cover" src="" alt=""/>
+      <div class="space-y-3">
+        <p id="qmDesc" class="text-sm text-gray-600 dark:text-gray-300"></p>
+        <div class="font-extrabold text-primary" id="qmPrice"></div>
+        <div class="flex gap-2">
+          <button id="qmAdd" class="flex-1 h-10 rounded-md bg-primary text-white font-semibold" data-i18n="add_to_cart">أضف للسلة</button>
+          <button id="qmBuy" class="flex-1 h-10 rounded-md border border-gray-200 dark:border-gray-700" data-i18n="buy_now">اشتري الآن</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Footer -->
+<footer class="bg-white dark:bg-text-light/5">
+<div class="mx-auto max-w-screen-xl px-4 py-12 sm:px-6 lg:px-8">
+<div class="flex flex-col items-center gap-6 text-center">
+<h2 class="text-xl font-bold leading-tight text-text-light dark:text-text-dark" data-i18n="brand">Brand Logo</h2>
+<p class="max-w-md text-gray-500 dark:text-gray-400" data-i18n="footer_about">نقدم لكِ أجمل وأحدث تصميمات الأحذية والحقائب النسائية المصنوعة بحب وشغف في المغرب.</p>
+<form class="w-full max-w-md grid grid-cols-[1fr_auto] gap-2">
+  <input type="email" class="rounded-md border-gray-200 dark:border-gray-700 bg-background-light dark:bg-background-dark p-3 text-sm" placeholder="بريدك الإلكتروني" data-i18n-ph="newsletter_ph"/>
+  <button class="rounded-md bg-primary text-white px-4" type="button" data-i18n="subscribe">اشتركي</button>
+  <p class="col-span-2 text-xs text-gray-500" data-i18n="newsletter_note">لا رسائل إزعاج، فقط جديدنا وأفضل العروض.</p>
+ </form>
+<ul class="flex flex-wrap justify-center gap-6 md:gap-8">
+<li><a class="text-gray-700 dark:text-gray-200 transition hover:text-gray-700/75 dark:hover:text-gray-200/75" href="#" data-i18n="faq">الأسئلة الشائعة</a></li>
+<li><a class="text-gray-700 dark:text-gray-200 transition hover:text-gray-700/75 dark:hover:text-gray-200/75" href="#" data-i18n="shipping">سياسة الشحن</a></li>
+<li><a class="text-gray-700 dark:text-gray-200 transition hover:text-gray-700/75 dark:hover:text-gray-200/75" href="#" data-i18n="privacy">سياسة الخصوصية</a></li>
+</ul>
+<div class="flex justify-center gap-4">
+<a class="text-gray-700 dark:text-gray-200 hover:text-primary" href="#"><span class="sr-only">Instagram</span><span class="material-symbols-outlined">photo_camera</span></a>
+<a class="text-gray-700 dark:text-gray-200 hover:text-primary" href="#"><span class="sr-only">Facebook</span><span class="material-symbols-outlined">social_leaderboard</span></a>
+</div>
+<p class="text-xs text-gray-500 dark:text-gray-400">© 2024. <span data-i18n="brand">Brand Logo</span>. <span data-i18n="rights">كل الحقوق محفوظة.</span></p>
+</div>
+</div>
+</footer>
+<!-- Scripts: i18n, cart, quick view, animations -->
+<script>
+  const $ = (sel, root=document) => root.querySelector(sel);
+  const $$ = (sel, root=document) => Array.from(root.querySelectorAll(sel));
+
+  // i18n dictionary
+  const i18n = {
+    ar: {
+      brand: 'Brand Logo',
+      menu: 'القائمة',
+      nav_home: 'الرئيسية',
+      nav_products: 'المنتجات',
+      nav_about: 'عن الحرفة',
+      nav_blog: 'المدونة',
+      nav_contact: 'تواصل',
+      hero_title: 'أحذية وحقائب نسائية عصرية',
+      hero_sub: 'تخفيض: 20% على طلبك الأول',
+      shop_now: 'تسوقي الآن',
+      whatsapp: 'اطلبي عبر واتساب',
+      usp_shipping: 'توصيل مجاني',
+      usp_shipping_sub: 'على جميع الطلبات',
+      usp_cod: 'الدفع عند الاستلام',
+      usp_cod_sub: 'ادفعي عند وصول طلبك',
+      usp_support: 'دعم 24/7',
+      usp_support_sub: 'نحن هنا للمساعدة',
+      featured: 'منتجاتنا المميزة',
+      add_to_cart: 'أضف للسلة',
+      buy_now: 'اشتري الآن',
+      social_proof: 'زبائننا الراضون',
+      testimonial_body: '"جودة رائعة وتصميمات فريدة! وصلتني طلبيتي بسرعة. شكراً لكم."',
+      testimonial_author: '- فاطمة، من الدار البيضاء',
+      about_title: 'حرفة مغربية بلمسة عصرية',
+      about_body: 'نصنع منتجاتنا يدوياً بعناية في ورش مغربية، باستخدام جلود عالية الجودة وتفاصيل متقنة لتدوم معك طويلاً.',
+      about_point1: 'دعم الحرفيين المحليين',
+      about_point2: 'جودة وخامات ممتازة',
+      about_point3: 'تغليف صديق للبيئة',
+      about_point4: 'تصاميم حصرية',
+      blog_title: 'من المدونة',
+      blog_1_title: 'كيف تنسقين حقيبتك المغربية مع إطلالتك؟',
+      blog_1_teaser: 'نصائح عملية لإطلالة أنيقة في كل مناسبة.',
+      blog_2_title: 'دليل العناية بالأحذية الجلدية',
+      blog_2_teaser: 'حافظي على تألقها لأطول فترة ممكنة.',
+      cta_title: 'اطلبي الآن',
+      cta_sub: 'املئي النموذج أدناه وسنتصل بك للتأكيد',
+      confirm_order: 'تأكيد الطلب',
+      cart_title: 'سلة المشتريات',
+      total: 'الإجمالي',
+      place_order: 'تأكيد الطلب',
+      order_received: 'شكراً! تم استلام طلبك. سنعاود الاتصال قريباً.',
+      footer_about: 'نقدم لكِ أجمل وأحدث تصميمات الأحذية والحقائب النسائية المصنوعة بحب وشغف في المغرب.',
+      faq: 'الأسئلة الشائعة',
+      shipping: 'سياسة الشحن',
+      privacy: 'سياسة الخصوصية',
+      rights: 'كل الحقوق محفوظة.',
+      newsletter_ph: 'بريدك الإلكتروني',
+      subscribe: 'اشتركي',
+      newsletter_note: 'لا رسائل إزعاج، فقط جديدنا وأفضل العروض.',
+      name_ph: 'الاسم الكامل',
+      phone_ph: 'رقم الهاتف',
+      city_ph: 'المدينة',
+      address_ph: 'العنوان',
+      p1_name: 'حذاء الكريستال الأنيق',
+      p2_name: 'حقيبة جلدية كلاسيكية',
+      p3_name: 'حذاء رياضي عصري',
+      p4_name: 'حقيبة يد وردية',
+      filter_all: 'الكل',
+      filter_shoes: 'أحذية',
+      filter_bags: 'حقائب',
+      filter_best: 'الأكثر مبيعاً',
+      filter_hint: 'اختاري فئة للتصفية',
+      best_seller: 'الأكثر مبيعاً',
+      wa_order: 'اطلب عبر واتساب',
+      required_error: 'يرجى ملء الحقول المطلوبة',
+      phone_error: 'رقم الهاتف غير صالح',
+    },
+    fr: {
+      brand: 'Brand Logo',
+      menu: 'Menu',
+      nav_home: 'Accueil',
+      nav_products: 'Produits',
+      nav_about: 'À propos',
+      nav_blog: 'Blog',
+      nav_contact: 'Contact',
+      hero_title: 'Chaussures et sacs pour femmes',
+      hero_sub: 'Promo: -20% sur votre première commande',
+      shop_now: 'Acheter maintenant',
+      whatsapp: 'Commander via WhatsApp',
+      usp_shipping: 'Livraison gratuite',
+      usp_shipping_sub: 'Sur toutes les commandes',
+      usp_cod: 'Paiement à la livraison',
+      usp_cod_sub: 'Payez à la réception',
+      usp_support: 'Support 24/7',
+      usp_support_sub: 'Nous sommes là pour vous',
+      featured: 'Nos produits phares',
+      add_to_cart: 'Ajouter au panier',
+      buy_now: 'Acheter',
+      social_proof: 'Elles nous font confiance',
+      testimonial_body: '"Qualité au top et design unique ! Livraison rapide."',
+      testimonial_author: '- Fatima, Casablanca',
+      about_title: 'Artisanat marocain, touche moderne',
+      about_body: 'Fabriqués à la main dans des ateliers marocains, avec des cuirs de haute qualité et des finitions durables.',
+      about_point1: 'Soutien aux artisans locaux',
+      about_point2: 'Qualité premium',
+      about_point3: 'Emballage écoresponsable',
+      about_point4: 'Designs exclusifs',
+      blog_title: 'Du blog',
+      blog_1_title: 'Comment styliser un sac marocain ?',
+      blog_1_teaser: 'Conseils pratiques pour chaque occasion.',
+      blog_2_title: 'Entretenir vos chaussures en cuir',
+      blog_2_teaser: 'Les garder éclatantes plus longtemps.',
+      cta_title: 'Commander maintenant',
+      cta_sub: 'Remplissez le formulaire et nous vous appelons',
+      confirm_order: 'Confirmer',
+      cart_title: 'Panier',
+      total: 'Total',
+      place_order: 'Passer la commande',
+      order_received: 'Merci ! Nous vous contacterons très bientôt.' ,
+      footer_about: 'Des sacs et chaussures faits avec amour au Maroc.',
+      faq: 'FAQ',
+      shipping: 'Livraison',
+      privacy: 'Confidentialité',
+      rights: 'Tous droits réservés.',
+      newsletter_ph: 'Votre email',
+      subscribe: 'S’abonner',
+      newsletter_note: 'Pas de spam, juste nos nouveautés et offres.',
+      name_ph: 'Nom complet',
+      phone_ph: 'Téléphone',
+      city_ph: 'Ville',
+      address_ph: 'Adresse',
+      p1_name: 'Escarpin cristal élégant',
+      p2_name: 'Sac en cuir classique',
+      p3_name: 'Baskets tendance',
+      p4_name: 'Sac à main rose',
+      filter_all: 'Tous',
+      filter_shoes: 'Chaussures',
+      filter_bags: 'Sacs',
+      filter_best: 'Meilleures ventes',
+      filter_hint: 'Choisissez une catégorie',
+      best_seller: 'Meilleure vente',
+      wa_order: 'Commander via WhatsApp',
+      required_error: 'Veuillez remplir les champs requis',
+      phone_error: 'Numéro de téléphone invalide',
+    }
+  };
+
+  // Extra product metadata and catalog expansion
+  const productMeta = {
+    p1:{category:'shoes',best:true}, p2:{category:'bags',best:false}, p3:{category:'shoes',best:false}, p4:{category:'bags',best:true}
+  };
+  const newProducts = {
+    p5: { id:'p5', price:220, ar:{name:'بلغة جلد تقليدية', desc:'راحة أصيلة بتصميم مغربي.'}, fr:{name:'Babouche en cuir', desc:'Confort authentique, style marocain.'}, img: 'https://images.unsplash.com/photo-1519741497674-611481863552?q=80&w=1200&auto=format&fit=crop' },
+    p6: { id:'p6', price:330, ar:{name:'حقيبة دلو منسوجة', desc:'لمسة صيفية أنيقة وأصلية.'}, fr:{name:'Sac seau tressé', desc:'Touche estivale élégante.'}, img: 'https://images.unsplash.com/photo-1509631179647-0177331693ae?q=80&w=1200&auto=format&fit=crop' },
+    p7: { id:'p7', price:260, ar:{name:'صندل مزين بالخرز', desc:'لإطلالة يومية مبهجة.'}, fr:{name:'Sandales perles', desc:'Look frais au quotidien.'}, img: 'https://images.unsplash.com/photo-1520975682031-ae9ee3fabcab?q=80&w=1200&auto=format&fit=crop' },
+    p8: { id:'p8', price:300, ar:{name:'كلتش سهرة', desc:'إطلالة ليلية فاخرة.'}, fr:{name:'Pochette de soirée', desc:'Look chic en soirée.'}, img: 'https://images.unsplash.com/photo-1595950653106-6fcd2f0835a3?q=80&w=1200&auto=format&fit=crop' },
+    p9: { id:'p9', price:310, ar:{name:'سنيكرز بلمسة ذهبية', desc:'أنيقة ومريحة.'}, fr:{name:'Baskets dorées', desc:'Stylées et confortables.'}, img: 'https://images.unsplash.com/photo-1542291026-7eec264c27ff?q=80&w=1200&auto=format&fit=crop' },
+    p10:{ id:'p10',price:280, ar:{name:'حقيبة كتف مينيمل', desc:'تصميم عملي وخفيف.'}, fr:{name:'Sac bandoulière minimal', desc:'Design pratique et léger.'}, img: 'https://images.unsplash.com/photo-1548036328-c9fa89d128fa?q=80&w=1200&auto=format&fit=crop' },
+  };
+  /* allProducts defined after products */
+
+  let currentLang = localStorage.getItem('lang') || document.documentElement.lang || 'ar';
+  const whatsappNumber = '212600000000';
+
+  function applyI18n(lang) {
+    $$('[data-i18n]').forEach(el => {
+      const key = el.getAttribute('data-i18n');
+      if (i18n[lang][key]) el.textContent = i18n[lang][key];
+    });
+    $$('[data-i18n-ph]').forEach(el => {
+      const key = el.getAttribute('data-i18n-ph');
+      if (i18n[lang][key]) el.setAttribute('placeholder', i18n[lang][key]);
+    });
+    // Direction
+    document.documentElement.lang = lang;
+    document.documentElement.dir = lang === 'ar' ? 'rtl' : 'ltr';
+    $('#langToggle').textContent = lang === 'ar' ? 'AR' : 'FR';
+    formatAllPrices();
+    // Product names
+    ['p1_name','p2_name','p3_name','p4_name'].forEach(k=>{
+      $$(`[data-i18n="${k}"]`).forEach(el=> el.textContent = i18n[lang][k]);
+    });
+    localStorage.setItem('lang', lang);
+    try { renderProducts(); } catch(e){}
+  }
+
+  $('#langToggle').addEventListener('click', () => {
+    currentLang = currentLang === 'ar' ? 'fr' : 'ar';
+    applyI18n(currentLang);
+  });
+
+  // Currency formatting MAD
+  function formatMAD(value) {
+    const locale = currentLang === 'ar' ? 'ar-MA' : 'fr-MA';
+    try {
+      return new Intl.NumberFormat(locale, { style: 'currency', currency: 'MAD' }).format(value);
+    } catch (e) {
+      return (currentLang==='ar' ? value + ' د.م' : 'MAD ' + value);
+    }
+  }
+  function formatAllPrices() {
+    $$('.price').forEach(el => {
+      const v = parseFloat(el.dataset.price || '0');
+      el.textContent = formatMAD(v);
+    });
+    $('#qmPrice') && ($('#qmPrice').textContent = $('#qmPrice').dataset.val ? formatMAD(parseFloat($('#qmPrice').dataset.val)) : '');
+    $('#cartTotal') && ($('#cartTotal').textContent = formatMAD(cart.total()));
+  }
+
+  // Sidebar
+  const sidebar = $('#sidebar');
+  $('#menuButton').addEventListener('click',()=> sidebar.classList.remove('translate-x-full'));
+  $('#closeSidebar').addEventListener('click',()=> sidebar.classList.add('translate-x-full'));
+  $$('#sidebar a').forEach(a=> a.addEventListener('click',()=> sidebar.classList.add('translate-x-full')));
+
+  // Mini-cart
+  const miniCart = $('#miniCart');
+  $('#cartButton').addEventListener('click', ()=> miniCart.classList.remove('-translate-x-full'));
+  $('#closeCart').addEventListener('click', ()=> miniCart.classList.add('-translate-x-full'));
+
+  const CART_KEY = 'cart_v1';
+  const cart = {
+    items: {},
+    add(id, product){ this.items[id] = this.items[id] || { ...product, qty:0 }; this.items[id].qty++; renderCart(); },
+    remove(id){ delete this.items[id]; renderCart(); },
+    count(){ return Object.values(this.items).reduce((a,b)=>a+b.qty,0); },
+    total(){ return Object.values(this.items).reduce((a,b)=>a+b.qty*b.price,0); },
+    save(){ const map = {}; Object.values(this.items).forEach(it=> map[it.id]=it.qty); localStorage.setItem(CART_KEY, JSON.stringify(map)); },
+    load(){ const raw = localStorage.getItem(CART_KEY); if(!raw) return; try{ const map = JSON.parse(raw); Object.entries(map).forEach(([id,qty])=>{ if(allProducts && allProducts[id]) this.items[id] = { ...allProducts[id], qty: qty }; }); renderCart(); }catch(e){}
+    }
+  };
+
+  const products = {
+    p1: { id:'p1', price:350, ar:{name:i18n.ar.p1_name, desc:'تفاصيل راقية وكعب مريح لإطلالة ساحرة.'}, fr:{name:i18n.fr.p1_name, desc:'Détails raffinés et talon confortable.'}, img: 'https://lh3.googleusercontent.com/aida-public/AB6AXuB2oG6nFwAfcEbJB397bEpWLGDBorQ4VQHa99L8EpUcb1TxFljVy8qIcIIIiTsf2qJaYEW1iHT3Qxv_zMEQ-VNZFKU_D6iyA4ObD2pXD_Q_fjpaghMi9yAXFhp87IFFVvewQaiFtFl0CaMjF-uZtwKa6ukt24Ni3cL0bmlmlANurxUR4OZ4lRpgLUlOKDIxloyBk7fDtUZ6_w52PD4-p6---pr9gBaZoH5z17kms-xWvC6j9Mffa_QARKWUEIXvtR7_FGPDx5tdfBw' },
+    p2: { id:'p2', price:420, ar:{name:i18n.ar.p2_name, desc:'جلد طبيعي ولمسات نهائية ممتازة.'}, fr:{name:i18n.fr.p2_name, desc:'Cuir véritable et finitions premium.'}, img: 'https://lh3.googleusercontent.com/aida-public/AB6AXuBcQwXEYX93_GCVf0pa-yjPi1RMgE88uk0YimjVScJ5LpbiA0VpgMGV0-dSa47lA-tOeettyQxBKu4WrxvgKxNBec8DZU9m_1K79pbF5VeO0EzXDerCo-7NRrsYxe9WGzgDK0erMG56sgmUQ5TlcG2HTEznC1BxrT23T67k7hUUKzs-ZS8pOQZyEHeeQtvLGuO-NHIv9uOL2cCV-_E8Ns3AiXbuCj8jo8YAB__mp4g_pi-GAd8TcM86v2oh_LOoE04wUrC0MvcqvkE' },
+    p3: { id:'p3', price:280, ar:{name:i18n.ar.p3_name, desc:'راحة يومية وأناقة بسيطة.'}, fr:{name:i18n.fr.p3_name, desc:'Confort quotidien et style épuré.'}, img: 'https://lh3.googleusercontent.com/aida-public/AB6AXuAlLzH1C0D84gLRTLJEgwC5Ith4DUVBs8uGxzcHVvec9dmD4hcVEGWyvoNjfGZ3nOwSLLBKBU2sFvJV3ibZQd7euXWQc4DBbeY6-D1JX2YTNOQWtHsFcAiaBh5zIuRciiWGsFmoVJdwHLI8fYhnJvYI5I4001Ves_6Jgo1ghX1pV9urjBdLoSz9dGR7RLLFBM-RPg3zc6KO9RQd6ISFXDQV_75fEbXW62GN47sfXNgG7ODozFGiRRkQrf9KWqvfhSUmV-vpzZt_ZvI' },
+    p4: { id:'p4', price:390, ar:{name:i18n.ar.p4_name, desc:'لون أنثوي بتفاصيل ذهبية.'}, fr:{name:i18n.fr.p4_name, desc:'Teinte féminine et chaîne dorée.'}, img: 'https://lh3.googleusercontent.com/aida-public/AB6AXuD5kAVoV-HI3bCJs28pFv8-9c2VumTTYNcNHEw0rQ27mAgNCITr7Uko1gNtSmVYUY-CqeetuhNhGsSNMkRipe4L5Tl0hZ9PcgORQ8QeeOEOcJhxr85nwkU7O1P266K6fGpci5O-NtPoHU6yJzc11w5o9ev5YytazvSXuEhcavphPOKVhR27ikzLcmwTgzXsX-s9ncUBGCoQE5xo3pEyt3HlxfhI5HRritPJ-hnYZkl5BoKuiiMhrZM4GsvqXJaVj8Xr3NEZ2vuMyao' },
+  };
+  const allProducts = Object.assign({}, products, newProducts);
+
+  function renderCart(){
+    const wrap = $('#cartItems');
+    wrap.innerHTML = '';
+    Object.values(cart.items).forEach(item=>{
+      const row = document.createElement('div');
+      row.className = 'flex items-center gap-3 border border-gray-200 dark:border-gray-800 rounded-md p-2';
+      row.innerHTML = `<img src="${item.img}" class="w-16 h-16 object-cover rounded" alt=""><div class="flex-1"><div class="font-semibold">${item[currentLang].name}</div><div class="text-sm text-gray-600 dark:text-gray-300">x${item.qty}</div></div><div class="font-bold">${formatMAD(item.price*item.qty)}</div><button class="h-8 w-8 grid place-items-center rounded-md hover:bg-black/5 dark:hover:bg-white/10" aria-label="remove"><span class="material-symbols-outlined text-[18px]">delete</span></button>`;
+      row.querySelector('button').addEventListener('click', ()=> cart.remove(item.id));
+      wrap.appendChild(row);
+    });
+    const count = cart.count();
+    const badge = $('#cartCount');
+    if (count>0){ badge.textContent = count; badge.classList.remove('hidden'); } else { badge.classList.add('hidden'); }
+    $('#cartTotal').textContent = formatMAD(cart.total());
+    cart.save();
+  }
+
+  // Dynamic product rendering with filters
+  let currentFilter = 'all';
+  function renderProducts(){
+    const grid = document.getElementById('productGrid');
+    if (!grid) return;
+    let list = Object.values(allProducts).map(p=> ({...p, category: (productMeta[p.id]?.category)|| (['p2','p4'].includes(p.id)?'bags':'shoes'), best: (productMeta[p.id]?.best)|| false }));
+    if (currentFilter === 'shoes') list = list.filter(p=>p.category==='shoes');
+    if (currentFilter === 'bags') list = list.filter(p=>p.category==='bags');
+    if (currentFilter === 'best') list = list.filter(p=>p.best);
+    grid.innerHTML = list.map(p=> `
+      <div class="relative flex flex-col gap-2 overflow-hidden rounded-lg bg-white dark:bg-text-light/5 shadow-sm transition-transform hover:scale-105">
+        ${p.best ? `<div class=\"absolute top-2 left-2 z-10 rounded bg-secondary px-2 py-1 text-xs font-bold text-white\">${i18n[currentLang].best_seller}</div>`: ''}
+        <img class="h-40 w-full object-cover" src="${p.img}" alt=""/>
+        <div class="flex flex-col gap-2 p-3">
+          <h3 class="font-bold text-sm leading-snug">${p[currentLang].name}</h3>
+          <p class="font-bold text-primary"><span class="price" data-price="${p.price}"></span></p>
+          <div class="flex gap-2 mt-2">
+            <button data-add="${p.id}" class="flex-1 flex h-9 cursor-pointer items-center justify-center overflow-hidden rounded-md bg-primary text-white text-sm font-bold">${i18n[currentLang].add_to_cart}</button>
+            <button data-quick="${p.id}" class="flex h-9 w-9 grid place-items-center rounded-md border border-gray-200 dark:border-gray-700"><span class="material-symbols-outlined text-sm">visibility</span></button>
+          </div>
+        </div>
+      </div>
+    `).join('');
+    formatAllPrices();
+    // Bind buttons
+    $$('#productGrid [data-add]').forEach(btn=> btn.addEventListener('click', (e)=>{
+      const id = e.currentTarget.getAttribute('data-add');
+      cart.add(id, allProducts[id]);
+    }));
+    $$('#productGrid [data-quick]').forEach(btn=> btn.addEventListener('click', (e)=> openQuick(e.currentTarget.getAttribute('data-quick'))));
+  }
+
+  // Wire product buttons (legacy grid)
+  $$('[data-add]').forEach(btn=> btn.addEventListener('click', (e)=>{
+    const id = e.currentTarget.getAttribute('data-add');
+    cart.add(id, allProducts[id]);
+  }));
+
+  // Quick View
+  const qm = $('#quickModal'), qmc = $('#quickContent');
+  function openQuick(id){
+    const p = allProducts[id];
+    $('#qmTitle').textContent = p[currentLang].name;
+    $('#qmDesc').textContent = p[currentLang].desc;
+    $('#qmImage').src = p.img;
+    $('#qmPrice').dataset.val = p.price; $('#qmPrice').textContent = formatMAD(p.price);
+    $('#qmAdd').onclick = ()=> { cart.add(id, p); closeQuick(); miniCart.classList.remove('-translate-x-full'); };
+    $('#qmBuy').onclick = ()=> { cart.add(id, p); closeQuick(); miniCart.classList.remove('-translate-x-full'); };
+    qm.classList.remove('hidden');
+    requestAnimationFrame(()=> qmc.classList.remove('translate-y-6','scale-95','opacity-0'));
+  }
+  function closeQuick(){ qmc.classList.add('translate-y-6','scale-95','opacity-0'); setTimeout(()=> qm.classList.add('hidden'), 180); }
+  $('#closeQuick').addEventListener('click', closeQuick);
+  qm.addEventListener('click', (e)=> { if (e.target === qm) closeQuick(); });
+  $$('[data-quick]').forEach(btn=> btn.addEventListener('click', (e)=> openQuick(e.currentTarget.getAttribute('data-quick'))));
+
+  // Reveal animations
+  const io = new IntersectionObserver((entries)=>{
+    entries.forEach(entry=>{
+      if(entry.isIntersecting){ entry.target.classList.add('is-visible'); io.unobserve(entry.target); }
+    })
+  }, { threshold: 0.1 });
+  $$('.reveal').forEach(el=> io.observe(el));
+
+  // Filters interactions
+  const filtersWrap = document.getElementById('filters');
+  if (filtersWrap){
+    filtersWrap.addEventListener('click', (e)=>{
+      const btn = e.target.closest('.filter-chip');
+      if(!btn) return;
+      currentFilter = btn.dataset.filter;
+      $$('#filters .filter-chip').forEach(b=> b.classList.remove('bg-primary/20','dark:bg-primary/30','text-primary'));
+      btn.classList.add('bg-primary/20','dark:bg-primary/30','text-primary');
+      renderProducts();
+    });
+  }
+
+  // Hide legacy static products grid and filters
+  try{
+    const header = document.getElementById('products');
+    const oldFilters = header && header.nextElementSibling;
+    const oldGrid = oldFilters && oldFilters.nextElementSibling;
+    if (oldFilters && oldFilters.classList.contains('flex')) oldFilters.style.display='none';
+    if (oldGrid && oldGrid.classList.contains('grid')) oldGrid.style.display='none';
+  }catch{}
+
+  // Theme persistence + toggle
+  function applyTheme(theme){
+    if(theme==='dark'){ document.documentElement.classList.add('dark'); }
+    else { document.documentElement.classList.remove('dark'); }
+    localStorage.setItem('theme', theme);
+    const icon = document.querySelector('#themeToggle .material-symbols-outlined');
+    if (icon) icon.textContent = theme==='dark' ? 'light_mode' : 'dark_mode';
+  }
+  applyTheme(localStorage.getItem('theme') || 'light');
+  document.getElementById('themeToggle')?.addEventListener('click', ()=>{
+    const next = document.documentElement.classList.contains('dark') ? 'light' : 'dark';
+    applyTheme(next);
+  });
+
+  // WhatsApp integration
+  function openWhatsApp(message){
+    const url = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
+    window.open(url, '_blank');
+  }
+  function buildCartMessage(){
+    const lines = Object.values(cart.items).map(it=> `- ${it[currentLang].name} x${it.qty} = ${it.price*it.qty} MAD`);
+    return (currentLang==='ar' ? 'مرحباً، أود إتمام طلب:\n' : 'Bonjour, je souhaite passer commande:\n') + lines.join('\n') + `\n${i18n[currentLang].total}: ${cart.total()} MAD`;
+  }
+  document.getElementById('whatsappCTA')?.addEventListener('click', ()=>{
+    const msg = cart.count()>0 ? buildCartMessage() : (currentLang==='ar' ? 'مرحباً، أريد الاستفسار عن المنتجات.' : 'Bonjour, je souhaite en savoir plus sur vos produits.');
+    openWhatsApp(msg);
+  });
+  document.getElementById('waOrderBtn')?.addEventListener('click', ()=> openWhatsApp(buildCartMessage()));
+
+  // Basic validation helpers
+  function markInvalid(el){ el.classList.add('ring-2','ring-red-500'); }
+  function clearInvalid(el){ el.classList.remove('ring-2','ring-red-500'); }
+  function validPhone(v){ return /^(?:\+?212|0)(?:6|7)\d{8}$/.test(v.trim()); }
+
+  // Contact form validation
+  const contactForm = document.getElementById('contactForm');
+  if (contactForm){
+    contactForm.addEventListener('submit', (e)=>{
+      e.preventDefault();
+      const name=document.getElementById('name'), phone=document.getElementById('phone'), city=document.getElementById('city'), addr=document.getElementById('address');
+      [name,phone,city,addr].forEach(clearInvalid);
+      if(!name.value || !phone.value){ if(!name.value) markInvalid(name); if(!phone.value) markInvalid(phone); alert(i18n[currentLang].required_error); return; }
+      if(!validPhone(phone.value)){ markInvalid(phone); alert(i18n[currentLang].phone_error); return; }
+      alert(i18n[currentLang].order_received); contactForm.reset();
+    });
+  }
+
+  // Initial
+  applyI18n(currentLang);
+  formatAllPrices();
+  renderProducts();
+  cart.load();
+
+  // Submit COD (demo + validation)
+  $('#submitCOD').addEventListener('click', ()=> {
+    const fields = Array.from($('#codForm').querySelectorAll('input,textarea'));
+    fields.forEach(clearInvalid);
+    const [n,p,c,a] = fields;
+    if(!n.value || !p.value){ if(!n.value) markInvalid(n); if(!p.value) markInvalid(p); alert(i18n[currentLang].required_error); return; }
+    if(!validPhone(p.value)){ markInvalid(p); alert(i18n[currentLang].phone_error); return; }
+    alert(i18n[currentLang].order_received);
+    miniCart.classList.add('-translate-x-full');
+    cart.items = {}; renderCart();
+  });
+</script>
+</div>
+</body></html>

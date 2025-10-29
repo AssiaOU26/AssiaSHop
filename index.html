@@ -102,7 +102,7 @@
 <div id="hero" class="@container">
 <div class="@[480px]:p-4">
 <div class="relative flex min-h-[60vh] flex-col gap-6 @[480px]:gap-8 items-center justify-center p-4 text-center overflow-hidden">
-  <video class="absolute inset-0 w-full h-full object-cover -z-10" src="assets/bag.mp4" autoplay muted loop playsinline></video>
+  <video class="absolute inset-0 w-full h-full object-cover -z-10" src="assets/hero.mp4" poster="assets/bag1.jpeg" autoplay muted loop playsinline></video>
   <div class="absolute inset-0 bg-gradient-to-b from-black/30 to-black/60 -z-10"></div>
 <div class="flex flex-col gap-2">
 <h1 class="text-white text-4xl font-black leading-tight tracking-[-0.033em] @[480px]:text-5xl" data-i18n="hero_title">أحذية وحقائب نسائية عصرية</h1>
@@ -226,10 +226,10 @@
     <h2 class="text-center text-2xl font-extrabold mb-6" data-i18n="lookbook_title">فيديوهات العرض</h2>
     <div class="grid gap-4 sm:grid-cols-2">
       <div class="rounded-lg overflow-hidden bg-white dark:bg-text-light/5 border border-gray-200 dark:border-gray-700 shadow-sm">
-        <video class="w-full aspect-video" src="assets/bag4.mp4" controls playsinline muted poster="assets/bag1.jpeg"></video>
+        <video class="w-full aspect-video" src="assets/bag4.mp4" controls playsinline muted preload="metadata" poster="assets/bag1.jpeg"></video>
       </div>
       <div class="rounded-lg overflow-hidden bg-white dark:bg-text-light/5 border border-gray-200 dark:border-gray-700 shadow-sm">
-        <video class="w-full aspect-video" src="assets/bag5.mp4" controls playsinline muted poster="assets/bag2.jpeg"></video>
+        <video class="w-full aspect-video" src="assets/bag5.mp4" controls playsinline muted preload="metadata" poster="assets/bag2.jpeg"></video>
       </div>
     </div>
   </div>
@@ -239,9 +239,9 @@
 <div class="bg-white dark:bg-text-light/5 py-12 reveal">
 <h2 class="text-text-light dark:text-text-dark text-center text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-6" data-i18n="social_proof">زبائننا الراضون</h2>
 <div class="grid grid-cols-3 gap-1 px-4">
-<img class="aspect-square w-full object-cover" alt="عميلة تعرض حذاء جديد" src="assets/shoes3.jpeg"/>
-<img class="aspect-square w-full object-cover" alt="عميلة مع حقيبة أنيقة" src="assets/bag1.jpeg"/>
-<img class="aspect-square w-full object-cover" alt="عميلة سعيدة بمشترياتها" src="assets/shoes4.jpeg"/>
+<img class="aspect-square w-full object-cover" alt="عميلة تعرض حذاء جديد" src="assets/shoes3.jpeg" loading="lazy" decoding="async"/>
+<img class="aspect-square w-full object-cover" alt="عميلة مع حقيبة أنيقة" src="assets/bag1.jpeg" loading="lazy" decoding="async"/>
+<img class="aspect-square w-full object-cover" alt="عميلة سعيدة بمشترياتها" src="assets/shoes4.jpeg" loading="lazy" decoding="async"/>
 </div>
 <div class="p-4 mt-4 text-center">
 <p class="text-text-light/80 dark:text-text-dark/80 italic" data-i18n="testimonial_body">"جودة رائعة وتصميمات فريدة! وصلتني طلبيتي بسرعة. شكراً لكم."</p>
@@ -251,7 +251,7 @@
 <!-- About & Craft Section -->
 <section id="about" class="px-4 py-12 sm:py-16 bg-background-light/50 dark:bg-background-dark/40 reveal">
   <div class="mx-auto max-w-5xl grid gap-8 sm:grid-cols-2 items-center">
-    <img class="rounded-lg shadow-sm aspect-[4/3] object-cover" src="assets/bag2.jpeg" alt="حرفي مغربي يعمل على الجلد"/>
+    <img class="rounded-lg shadow-sm aspect-[4/3] object-cover" src="assets/bag2.jpeg" alt="حرفي مغربي يعمل على الجلد" loading="lazy" decoding="async"/>
     <div class="space-y-3">
       <h2 class="text-2xl font-extrabold" data-i18n="about_title">حرفة مغربية بلمسة عصرية</h2>
       <p class="text-gray-600 dark:text-gray-300" data-i18n="about_body">نصنع منتجاتنا يدوياً بعناية في ورش مغربية، باستخدام جلود عالية الجودة وتفاصيل متقنة لتدوم معك طويلاً.</p>
@@ -271,14 +271,14 @@
     <h2 class="text-center text-2xl font-extrabold mb-6" data-i18n="blog_title">من المدونة</h2>
     <div class="grid gap-4 sm:grid-cols-2">
       <a href="#" class="group rounded-lg overflow-hidden bg-white dark:bg-text-light/5 border border-gray-200 dark:border-gray-700 shadow-sm">
-        <img class="h-44 w-full object-cover group-hover:scale-105 transition" src="assets/shoes6.jpeg" alt="تنسيق حقائب مغربية"/>
+        <img class="h-44 w-full object-cover group-hover:scale-105 transition" src="assets/shoes6.jpeg" alt="تنسيق حقائب مغربية" loading="lazy" decoding="async"/>
         <div class="p-4">
           <h3 class="font-bold" data-i18n="blog_1_title">كيف تنسقين حقيبتك المغربية مع إطلالتك؟</h3>
           <p class="text-sm text-gray-600 dark:text-gray-300" data-i18n="blog_1_teaser">نصائح عملية لإطلالة أنيقة في كل مناسبة.</p>
         </div>
       </a>
       <a href="#" class="group rounded-lg overflow-hidden bg-white dark:bg-text-light/5 border border-gray-200 dark:border-gray-700 shadow-sm">
-        <img class="h-44 w-full object-cover group-hover:scale-105 transition" src="assets/shoes7.jpeg" alt="العناية بالأحذية الجلدية"/>
+        <img class="h-44 w-full object-cover group-hover:scale-105 transition" src="assets/shoes7.jpeg" alt="العناية بالأحذية الجلدية" loading="lazy" decoding="async"/>
         <div class="p-4">
           <h3 class="font-bold" data-i18n="blog_2_title">دليل العناية بالأحذية الجلدية</h3>
           <p class="text-sm text-gray-600 dark:text-gray-300" data-i18n="blog_2_teaser">حافظي على تألقها لأطول فترة ممكنة.</p>
@@ -538,6 +538,7 @@
     p8: { id:'p8', price:300, ar:{name:'كلتش سهرة', desc:'إطلالة ليلية فاخرة.'}, fr:{name:'Pochette de soirée', desc:'Look chic en soirée.'}, img: 'assets/bag1.jpeg' },
     p9: { id:'p9', price:310, ar:{name:'سنيكرز بلمسة ذهبية', desc:'أنيقة ومريحة.'}, fr:{name:'Baskets dorées', desc:'Stylées et confortables.'}, img: 'assets/shoes5.jpeg' },
     p10:{ id:'p10',price:280, ar:{name:'حقيبة كتف مينيمل', desc:'تصميم عملي وخفيف.'}, fr:{name:'Sac bandoulière minimal', desc:'Design pratique et léger.'}, img: 'assets/bag.jpeg' },
+    p11:{ id:'p11',price:360, ar:{name:'حقيبة يد كلاسيكية', desc:'جلد ناعم وتصميم عملي.'}, fr:{name:'Sac à main classique', desc:'Cuir souple, design pratique.'}, img: 'assets/bag6.jpeg' },
   };
   /* allProducts defined after products */
 
@@ -649,7 +650,7 @@
     grid.innerHTML = list.map(p=> `
       <div class="relative flex flex-col gap-2 overflow-hidden rounded-lg bg-white dark:bg-text-light/5 shadow-sm transition-transform hover:scale-105">
         ${p.best ? `<div class=\"absolute top-2 left-2 z-10 rounded bg-secondary px-2 py-1 text-xs font-bold text-white\">${i18n[currentLang].best_seller}</div>`: ''}
-        <img class="h-40 w-full object-cover" src="${p.img}" alt=""/>
+        <img class="h-40 w-full object-cover" src="${p.img}" alt="" loading="lazy" decoding="async"/>
         <div class="flex flex-col gap-2 p-3">
           <h3 class="font-bold text-sm leading-snug">${p[currentLang].name}</h3>
           <p class="font-bold text-primary"><span class="price" data-price="${p.price}"></span></p>

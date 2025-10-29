@@ -101,7 +101,9 @@
 <!-- Hero Section -->
 <div id="hero" class="@container">
 <div class="@[480px]:p-4">
-<div class="flex min-h-[60vh] flex-col gap-6 bg-cover bg-center bg-no-repeat @[480px]:gap-8 items-center justify-center p-4 text-center" data-alt="Stylish women's shoes and bags on a minimalist background" style='background-image: linear-gradient(rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0.5) 100%), url("https://lh3.googleusercontent.com/aida-public/AB6AXuD5P5Mmae1A5Il6er4zi_8nwjefrVn99e3Xwub0zEWl9n9NWgM7vFp62BGHmvKxCPlt9eHCx5nj8H4X8He_g34FxtRuY4OWiQ3OOjM-UMJDMo-mD64T13xXsQEN2E1YpYUBjlQEq1B2jg4DaLFZg6hb3ZABfnALVQaReNr_sSqOr81qXZ7ZyWFoZgkRH42Cn5GWoJOtDPc0Ud5LHVW9JOxGQInEZzYRZIlqZ4Kbta6C5NjGGdK5doF6Hiu5xlJ_iRl0RM77JFQuDtk");'>
+<div class="relative flex min-h-[60vh] flex-col gap-6 @[480px]:gap-8 items-center justify-center p-4 text-center overflow-hidden">
+  <video class="absolute inset-0 w-full h-full object-cover -z-10" src="assets/bag.mp4" autoplay muted loop playsinline></video>
+  <div class="absolute inset-0 bg-gradient-to-b from-black/30 to-black/60 -z-10"></div>
 <div class="flex flex-col gap-2">
 <h1 class="text-white text-4xl font-black leading-tight tracking-[-0.033em] @[480px]:text-5xl" data-i18n="hero_title">أحذية وحقائب نسائية عصرية</h1>
 <h2 class="text-white text-sm font-normal leading-normal @[480px]:text-base" data-i18n="hero_sub">تخفيض: 20% على طلبك الأول</h2>
@@ -218,14 +220,28 @@
   </div>
   <div id="productGrid" class="grid grid-cols-2 gap-4 p-4 reveal"></div>
 </section>
+<!-- Lookbook Videos -->
+<section id="lookbook" class="px-4 py-12 sm:py-16 reveal">
+  <div class="mx-auto max-w-5xl">
+    <h2 class="text-center text-2xl font-extrabold mb-6" data-i18n="lookbook_title">فيديوهات العرض</h2>
+    <div class="grid gap-4 sm:grid-cols-2">
+      <div class="rounded-lg overflow-hidden bg-white dark:bg-text-light/5 border border-gray-200 dark:border-gray-700 shadow-sm">
+        <video class="w-full aspect-video" src="assets/bag4.mp4" controls playsinline muted poster="assets/bag1.jpeg"></video>
+      </div>
+      <div class="rounded-lg overflow-hidden bg-white dark:bg-text-light/5 border border-gray-200 dark:border-gray-700 shadow-sm">
+        <video class="w-full aspect-video" src="assets/bag5.mp4" controls playsinline muted poster="assets/bag2.jpeg"></video>
+      </div>
+    </div>
+  </div>
+  </section>
 
 <!-- Social Proof Section -->
 <div class="bg-white dark:bg-text-light/5 py-12 reveal">
 <h2 class="text-text-light dark:text-text-dark text-center text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-6" data-i18n="social_proof">زبائننا الراضون</h2>
 <div class="grid grid-cols-3 gap-1 px-4">
-<img class="aspect-square w-full object-cover" data-alt="Customer photo showing off their new shoes." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDpAZ9nsJXhWn4CGp9xN98KVZf7X0wtUgIYta_yKT-ueqa5v-tbwX6GBjAHBWaufNc6tvVDo14F6LQ8ewMtdLtlleudD0QfeZNIFyWh1-X20aZFyFhxNcSjBaAmNq4EeBGY91Yb8CH_fNvOT4UkNhdi3nKtE837hGcKOmdJmQhXpFYAnD9PLimhclXhBYO0pZtMoFo3OEo48nMbK0lbhrhISSqdBjsHUlZ1v9MMMn8Oldr_mdEfZEsk81JU9NbToox-zwaOrTlblYM"/>
-<img class="aspect-square w-full object-cover" data-alt="Customer photo with a stylish handbag." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCyuRXY1Vt0goPXRZ9CdPwUXT9bhvVB2PdHT6WjWNICB6Xq2q1UJSxN-6LDUtp1AGsJIGd4phT0Sn7rli71ft4t6p27ytezn1MTXFOIyJoIp3pnpxc7af1obtO77yrMkLcM4_7DHm6LtAHQaKmZoinW-nMCsYAdy7d2COuDQFhRzbD5FGcImNMZgrRr0IMcSAOlfF-o7dsRCTch3DbuCKLBbwK549E25x9UmjFWuFS5wygJhJXECaLMrLyfrJDaXiovm7RyRl249y0"/>
-<img class="aspect-square w-full object-cover" data-alt="Another customer happily displaying their purchase." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB-QJWYiC_VUa8FzzSNvBvoQCNaj6DBU8tdYxGmOL1m9dHpf-6oHeq2mBSTuhSCu9x72fUjTjSVcf-vJeqOjT4ecc56kbcCKEhcOAjMQCFISAY4oZre9cLobErbx2IjQ8tOZ2Jq91eHUP6vSGzFUA2krmWdMuRM1qm5xg3UXQvscshk1uXsM9j1HHDg0bFV3_eNwCtstxCe1otXfG34qS57RwmTt_9HW41By4iohPtzqZA_RXMFiBl2FIksQ-rxwDuxnm2Oiv_ZJeo"/>
+<img class="aspect-square w-full object-cover" alt="عميلة تعرض حذاء جديد" src="assets/shoes3.jpeg"/>
+<img class="aspect-square w-full object-cover" alt="عميلة مع حقيبة أنيقة" src="assets/bag1.jpeg"/>
+<img class="aspect-square w-full object-cover" alt="عميلة سعيدة بمشترياتها" src="assets/shoes4.jpeg"/>
 </div>
 <div class="p-4 mt-4 text-center">
 <p class="text-text-light/80 dark:text-text-dark/80 italic" data-i18n="testimonial_body">"جودة رائعة وتصميمات فريدة! وصلتني طلبيتي بسرعة. شكراً لكم."</p>
@@ -235,7 +251,7 @@
 <!-- About & Craft Section -->
 <section id="about" class="px-4 py-12 sm:py-16 bg-background-light/50 dark:bg-background-dark/40 reveal">
   <div class="mx-auto max-w-5xl grid gap-8 sm:grid-cols-2 items-center">
-    <img class="rounded-lg shadow-sm aspect-[4/3] object-cover" src="https://images.unsplash.com/photo-1520975682031-ae9ee3fabcab?q=80&w=1200&auto=format&fit=crop" alt="Artisan crafting leather in Morocco"/>
+    <img class="rounded-lg shadow-sm aspect-[4/3] object-cover" src="assets/bag2.jpeg" alt="حرفي مغربي يعمل على الجلد"/>
     <div class="space-y-3">
       <h2 class="text-2xl font-extrabold" data-i18n="about_title">حرفة مغربية بلمسة عصرية</h2>
       <p class="text-gray-600 dark:text-gray-300" data-i18n="about_body">نصنع منتجاتنا يدوياً بعناية في ورش مغربية، باستخدام جلود عالية الجودة وتفاصيل متقنة لتدوم معك طويلاً.</p>
@@ -255,14 +271,14 @@
     <h2 class="text-center text-2xl font-extrabold mb-6" data-i18n="blog_title">من المدونة</h2>
     <div class="grid gap-4 sm:grid-cols-2">
       <a href="#" class="group rounded-lg overflow-hidden bg-white dark:bg-text-light/5 border border-gray-200 dark:border-gray-700 shadow-sm">
-        <img class="h-44 w-full object-cover group-hover:scale-105 transition" src="https://images.unsplash.com/photo-1509631179647-0177331693ae?q=80&w=1200&auto=format&fit=crop" alt="Styling Moroccan handbags"/>
+        <img class="h-44 w-full object-cover group-hover:scale-105 transition" src="assets/shoes6.jpeg" alt="تنسيق حقائب مغربية"/>
         <div class="p-4">
           <h3 class="font-bold" data-i18n="blog_1_title">كيف تنسقين حقيبتك المغربية مع إطلالتك؟</h3>
           <p class="text-sm text-gray-600 dark:text-gray-300" data-i18n="blog_1_teaser">نصائح عملية لإطلالة أنيقة في كل مناسبة.</p>
         </div>
       </a>
       <a href="#" class="group rounded-lg overflow-hidden bg-white dark:bg-text-light/5 border border-gray-200 dark:border-gray-700 shadow-sm">
-        <img class="h-44 w-full object-cover group-hover:scale-105 transition" src="https://images.unsplash.com/photo-1595950653106-6fcd2f0835a3?q=80&w=1200&auto=format&fit=crop" alt="Care for leather shoes"/>
+        <img class="h-44 w-full object-cover group-hover:scale-105 transition" src="assets/shoes7.jpeg" alt="العناية بالأحذية الجلدية"/>
         <div class="p-4">
           <h3 class="font-bold" data-i18n="blog_2_title">دليل العناية بالأحذية الجلدية</h3>
           <p class="text-sm text-gray-600 dark:text-gray-300" data-i18n="blog_2_teaser">حافظي على تألقها لأطول فترة ممكنة.</p>
@@ -395,6 +411,7 @@
       social_proof: 'زبائننا الراضون',
       testimonial_body: '"جودة رائعة وتصميمات فريدة! وصلتني طلبيتي بسرعة. شكراً لكم."',
       testimonial_author: '- فاطمة، من الدار البيضاء',
+      lookbook_title: 'فيديوهات العرض',
       about_title: 'حرفة مغربية بلمسة عصرية',
       about_body: 'نصنع منتجاتنا يدوياً بعناية في ورش مغربية، باستخدام جلود عالية الجودة وتفاصيل متقنة لتدوم معك طويلاً.',
       about_point1: 'دعم الحرفيين المحليين',
@@ -463,6 +480,7 @@
       social_proof: 'Elles nous font confiance',
       testimonial_body: '"Qualité au top et design unique ! Livraison rapide."',
       testimonial_author: '- Fatima, Casablanca',
+      lookbook_title: 'Lookbook vidéo',
       about_title: 'Artisanat marocain, touche moderne',
       about_body: 'Fabriqués à la main dans des ateliers marocains, avec des cuirs de haute qualité et des finitions durables.',
       about_point1: 'Soutien aux artisans locaux',
@@ -514,12 +532,12 @@
     p1:{category:'shoes',best:true}, p2:{category:'bags',best:false}, p3:{category:'shoes',best:false}, p4:{category:'bags',best:true}
   };
   const newProducts = {
-    p5: { id:'p5', price:220, ar:{name:'بلغة جلد تقليدية', desc:'راحة أصيلة بتصميم مغربي.'}, fr:{name:'Babouche en cuir', desc:'Confort authentique, style marocain.'}, img: 'https://images.unsplash.com/photo-1519741497674-611481863552?q=80&w=1200&auto=format&fit=crop' },
-    p6: { id:'p6', price:330, ar:{name:'حقيبة دلو منسوجة', desc:'لمسة صيفية أنيقة وأصلية.'}, fr:{name:'Sac seau tressé', desc:'Touche estivale élégante.'}, img: 'https://images.unsplash.com/photo-1509631179647-0177331693ae?q=80&w=1200&auto=format&fit=crop' },
-    p7: { id:'p7', price:260, ar:{name:'صندل مزين بالخرز', desc:'لإطلالة يومية مبهجة.'}, fr:{name:'Sandales perles', desc:'Look frais au quotidien.'}, img: 'https://images.unsplash.com/photo-1520975682031-ae9ee3fabcab?q=80&w=1200&auto=format&fit=crop' },
-    p8: { id:'p8', price:300, ar:{name:'كلتش سهرة', desc:'إطلالة ليلية فاخرة.'}, fr:{name:'Pochette de soirée', desc:'Look chic en soirée.'}, img: 'https://images.unsplash.com/photo-1595950653106-6fcd2f0835a3?q=80&w=1200&auto=format&fit=crop' },
-    p9: { id:'p9', price:310, ar:{name:'سنيكرز بلمسة ذهبية', desc:'أنيقة ومريحة.'}, fr:{name:'Baskets dorées', desc:'Stylées et confortables.'}, img: 'https://images.unsplash.com/photo-1542291026-7eec264c27ff?q=80&w=1200&auto=format&fit=crop' },
-    p10:{ id:'p10',price:280, ar:{name:'حقيبة كتف مينيمل', desc:'تصميم عملي وخفيف.'}, fr:{name:'Sac bandoulière minimal', desc:'Design pratique et léger.'}, img: 'https://images.unsplash.com/photo-1548036328-c9fa89d128fa?q=80&w=1200&auto=format&fit=crop' },
+    p5: { id:'p5', price:220, ar:{name:'بلغة جلد تقليدية', desc:'راحة أصيلة بتصميم مغربي.'}, fr:{name:'Babouche en cuir', desc:'Confort authentique, style marocain.'}, img: 'assets/shoes3.jpeg' },
+    p6: { id:'p6', price:330, ar:{name:'حقيبة دلو منسوجة', desc:'لمسة صيفية أنيقة وأصلية.'}, fr:{name:'Sac seau tressé', desc:'Touche estivale élégante.'}, img: 'assets/bag2.jpeg' },
+    p7: { id:'p7', price:260, ar:{name:'صندل مزين بالخرز', desc:'لإطلالة يومية مبهجة.'}, fr:{name:'Sandales perles', desc:'Look frais au quotidien.'}, img: 'assets/shoes4.jpeg' },
+    p8: { id:'p8', price:300, ar:{name:'كلتش سهرة', desc:'إطلالة ليلية فاخرة.'}, fr:{name:'Pochette de soirée', desc:'Look chic en soirée.'}, img: 'assets/bag1.jpeg' },
+    p9: { id:'p9', price:310, ar:{name:'سنيكرز بلمسة ذهبية', desc:'أنيقة ومريحة.'}, fr:{name:'Baskets dorées', desc:'Stylées et confortables.'}, img: 'assets/shoes5.jpeg' },
+    p10:{ id:'p10',price:280, ar:{name:'حقيبة كتف مينيمل', desc:'تصميم عملي وخفيف.'}, fr:{name:'Sac bandoulière minimal', desc:'Design pratique et léger.'}, img: 'assets/bag.jpeg' },
   };
   /* allProducts defined after products */
 
@@ -595,10 +613,10 @@
   };
 
   const products = {
-    p1: { id:'p1', price:350, ar:{name:i18n.ar.p1_name, desc:'تفاصيل راقية وكعب مريح لإطلالة ساحرة.'}, fr:{name:i18n.fr.p1_name, desc:'Détails raffinés et talon confortable.'}, img: 'https://lh3.googleusercontent.com/aida-public/AB6AXuB2oG6nFwAfcEbJB397bEpWLGDBorQ4VQHa99L8EpUcb1TxFljVy8qIcIIIiTsf2qJaYEW1iHT3Qxv_zMEQ-VNZFKU_D6iyA4ObD2pXD_Q_fjpaghMi9yAXFhp87IFFVvewQaiFtFl0CaMjF-uZtwKa6ukt24Ni3cL0bmlmlANurxUR4OZ4lRpgLUlOKDIxloyBk7fDtUZ6_w52PD4-p6---pr9gBaZoH5z17kms-xWvC6j9Mffa_QARKWUEIXvtR7_FGPDx5tdfBw' },
-    p2: { id:'p2', price:420, ar:{name:i18n.ar.p2_name, desc:'جلد طبيعي ولمسات نهائية ممتازة.'}, fr:{name:i18n.fr.p2_name, desc:'Cuir véritable et finitions premium.'}, img: 'https://lh3.googleusercontent.com/aida-public/AB6AXuBcQwXEYX93_GCVf0pa-yjPi1RMgE88uk0YimjVScJ5LpbiA0VpgMGV0-dSa47lA-tOeettyQxBKu4WrxvgKxNBec8DZU9m_1K79pbF5VeO0EzXDerCo-7NRrsYxe9WGzgDK0erMG56sgmUQ5TlcG2HTEznC1BxrT23T67k7hUUKzs-ZS8pOQZyEHeeQtvLGuO-NHIv9uOL2cCV-_E8Ns3AiXbuCj8jo8YAB__mp4g_pi-GAd8TcM86v2oh_LOoE04wUrC0MvcqvkE' },
-    p3: { id:'p3', price:280, ar:{name:i18n.ar.p3_name, desc:'راحة يومية وأناقة بسيطة.'}, fr:{name:i18n.fr.p3_name, desc:'Confort quotidien et style épuré.'}, img: 'https://lh3.googleusercontent.com/aida-public/AB6AXuAlLzH1C0D84gLRTLJEgwC5Ith4DUVBs8uGxzcHVvec9dmD4hcVEGWyvoNjfGZ3nOwSLLBKBU2sFvJV3ibZQd7euXWQc4DBbeY6-D1JX2YTNOQWtHsFcAiaBh5zIuRciiWGsFmoVJdwHLI8fYhnJvYI5I4001Ves_6Jgo1ghX1pV9urjBdLoSz9dGR7RLLFBM-RPg3zc6KO9RQd6ISFXDQV_75fEbXW62GN47sfXNgG7ODozFGiRRkQrf9KWqvfhSUmV-vpzZt_ZvI' },
-    p4: { id:'p4', price:390, ar:{name:i18n.ar.p4_name, desc:'لون أنثوي بتفاصيل ذهبية.'}, fr:{name:i18n.fr.p4_name, desc:'Teinte féminine et chaîne dorée.'}, img: 'https://lh3.googleusercontent.com/aida-public/AB6AXuD5kAVoV-HI3bCJs28pFv8-9c2VumTTYNcNHEw0rQ27mAgNCITr7Uko1gNtSmVYUY-CqeetuhNhGsSNMkRipe4L5Tl0hZ9PcgORQ8QeeOEOcJhxr85nwkU7O1P266K6fGpci5O-NtPoHU6yJzc11w5o9ev5YytazvSXuEhcavphPOKVhR27ikzLcmwTgzXsX-s9ncUBGCoQE5xo3pEyt3HlxfhI5HRritPJ-hnYZkl5BoKuiiMhrZM4GsvqXJaVj8Xr3NEZ2vuMyao' },
+    p1: { id:'p1', price:350, ar:{name:i18n.ar.p1_name, desc:'تفاصيل راقية وكعب مريح لإطلالة ساحرة.'}, fr:{name:i18n.fr.p1_name, desc:'Détails raffinés et talon confortable.'}, img: 'assets/shoes1.jpeg' },
+    p2: { id:'p2', price:420, ar:{name:i18n.ar.p2_name, desc:'جلد طبيعي ولمسات نهائية ممتازة.'}, fr:{name:i18n.fr.p2_name, desc:'Cuir véritable et finitions premium.'}, img: 'assets/bag.jpeg' },
+    p3: { id:'p3', price:280, ar:{name:i18n.ar.p3_name, desc:'راحة يومية وأناقة بسيطة.'}, fr:{name:i18n.fr.p3_name, desc:'Confort quotidien et style épuré.'}, img: 'assets/shoes2.jpeg' },
+    p4: { id:'p4', price:390, ar:{name:i18n.ar.p4_name, desc:'لون أنثوي بتفاصيل ذهبية.'}, fr:{name:i18n.fr.p4_name, desc:'Teinte féminine et chaîne dorée.'}, img: 'assets/bag1.jpeg' },
   };
   const allProducts = Object.assign({}, products, newProducts);
 
